@@ -1,0 +1,48 @@
+
+<Main>
+    <div class="container ">
+        <div class="row">
+        <div class="col-md-12">
+            <h1>Cadastro de Produtos</h1>
+            <form [formGroup]="produtoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nomeProduto">Nome do Produto</label>
+                <input formControlName="nomeProduto"  type="text" class="form-control" id="nomeProduto" required="nomeProduto" placeholder="Ex.: Ferramenta de Software ">
+            </div>
+            <small>
+                <span *ngIf="produtoForm.get('nomeProduto')?.errors?.['required'] && produtoForm.get('nomeProduto')?.touched">
+                O campo nome é obrigatório
+                </span>
+            </small>
+            <div class="form-group">
+                <label for="descricaoProduto">Descrição do produto</label>
+                <input formControlName="descricaoProduto" type="text" class="form-control" id="descricaoProduto"  required="descricaoProduto" placeholder="Ex.: Criar cadastro automaticos com base ...">
+            </div>
+            <small>
+                <span *ngIf="produtoForm.get('descricaoProduto')?.errors?.['required'] && produtoForm.get('descricaoProduto')?.touched">
+                O campo descricao é obrigatório
+                </span>
+            </small>
+            <div class="form-group">
+                <label for="valorProduto">valor do produto </label>
+                <input formControlName="valorProduto" type="text" class="form-control" id="valorProduto" required="valorProduto" placeholder="15000">
+            </div>
+            <small>
+                <span *ngIf="produtoForm.get('valorProduto')?.errors?.['required'] && produtoForm.get('valorProduto')?.touched">
+                O campo valor é obrigatório
+                </span>
+            </small>
+            <div class="form-group">
+                <p>Disponível para venda:</p>
+                <input formControlName="disponivelParaVenda" type="radio" name="vendas" class="radio-1" id="sim" value="Sim">
+                <label for="sim">Sim</label>
+                <input formControlName="disponivelParaVenda" type="radio" name="vendas" class="radio-2" id="nao" value="Nao">
+                <label for="nao">Não</label>
+            </div>
+            <button type="submit" class="btn btn-outline-success w-100" [disabled]="!produtoForm.valid"> Cadastrar produto                
+            </button>
+            </form>
+        </div>
+        </div>
+    </div>
+</Main>

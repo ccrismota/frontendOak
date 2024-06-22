@@ -1,0 +1,26 @@
+.container{
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    color: #343A40;
+    display: block;
+    width: 50%;
+    margin: 10% auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.floating-button{
+    cursor: pointer;
+    position: fixed;
+    font-size: 50px;
+    padding: 10px;
+    bottom: 30px;
+    right: 30px;
+}
+
+.floating-button span{
+    border-radius: 50%;
+}
